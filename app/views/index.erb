@@ -1,0 +1,14 @@
+  <center>
+  <form id="user_input" name="user_input" action="/" method="post">
+    <input name="user_url" id="user_url" type="text" placeholder="http://" autofocus>
+    <input type="submit" value="Make me tiny!"> 
+  </form>
+  </center>
+  <% if @all_urls%>
+  <% @all_urls.each do |url| %>
+    <p>&raquo; URL: <a href="<%= url.url %>"><%= url.url %></a><br>
+    &raquo; <span class="tinytown">tinytown:</span> <a href="/<%= url.shorturl %>" target="_blank"><%= url.shorturl %></a><br>
+    &raquo; Click count: <%= url.click_count %></p>
+  <% end %>
+  <%end%>
+</div>
